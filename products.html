@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content-box{
+            background-color: wheat;
+            border-radius: 25px;
+            padding: 15px;
+            margin: 15px 250px 10px 52px;
+
+        }
+
+        h1{
+            text-decoration: underline;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+        .navbar{
+        background-color: rgb(1, 184, 77);
+        text-align: center;
+        padding: 15px
+
+       }
+       .navbar a{
+        text-decoration: none;
+        padding: 15px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        color: black;
+       }
+       .navbar a:hover{
+        text-decoration: underline;
+       }
+    </style>
+     <script>
+        function redirectToPage() {
+            const selectedOption = document.querySelector('input[name="options"]:checked');
+            if (selectedOption) {
+                window.location.href = selectedOption.value + ".html"; 
+            } else {
+                alert("Please select an option first.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>reen media</header>
+    <body>
+        <div class="navbar">
+         <a href="index.html">Home</a>
+         <a href="enquiry.html">enquiry</a>
+         <a href="contactus.html">contactus</a>
+         <a href="aboutus.html">aboutus</a>
+         <a href="products.html">products</a>
+        </div>
+    <img src="images/wedding photoshoot.jpeg" alt="">
+
+    <h1>Our Gallery</h1>
+
+    <label for="choices">See an Album:</label>
+<select id="choices" name="choices">
+    <option value="option1">Marriage</option>
+    <option value="option2">Funeral</option>
+    <option value="option3">Baby Shower</option>
+    <option value="option 4"><a href="aboutus.html"></a> Birthday</option> 
+
+</select>
+
+<p>Select one option:</p>
+<input type="radio" id="option1" name="options" value="option1">
+<label for="option1">Option 1</label>
+
+<input type="radio" id="option2" name="options" value="option2">
+<label for="option2">Option 2</label>
+
+<input type="radio" id="option3" name="options" value="option3">
+<label for="option3">Option 3</label>
+
+<br><br>
+<button onclick="redirectToPage()">Go to Selected Page</button>
+
+   <p class="content-box">
+
+    <b class="Rean">Reen Media</b> is a premier photography service dedicated to capturing life’s most cherished moments with professionalism and creativity. 
+    <br>Whether you're celebrating a wedding, hosting a corporate event, or need high-quality portraits, our expert team ensures that every 
+    <br>shot tells a compelling story. With a keen eye for detail and a passion for visual storytelling, we bring your vision to life through 
+    <br>stunning, high-resolution images that preserve your most meaningful experiences. <br>
+
+    <br>Our services cater to a variety of photography needs, including weddings, engagements, family portraits, corporate branding, product 
+    <br>photography, and more. We understand that each event and project is unique, which is why we tailor our approach to suit your personal style
+    <br>and requirements. From intimate gatherings to large-scale productions, we have the expertise and equipment to deliver outstanding results that
+    <br> exceed expectations. <br>
+
+    <br>At Reen Media, we believe that photography is more than just taking pictures—it’s about capturing emotions, personality, and the essence of 
+    <br> moment. Our team works closely with clients to ensure a relaxed and enjoyable experience, allowing us to create authentic and memorable images.
+    <br> Whether it’s a candid smile, a heartfelt embrace, or a perfectly composed product shot, we strive to produce visually stunning photos that stand 
+    <br>the test of time.
+
+    <br>In addition to our photography services, we also offer professional editing and retouching to enhance the final images. Using advanced post-production
+    <br> techniques, we refine colors, lighting, and composition to ensure each photograph is polished to perfection. Our goal is to deliver high-quality visuals
+    <br> that not only meet but exceed your expectations, providing you with timeless keepsakes and impactful branding materials. <br>
+
+    <br>With a commitment to excellence and customer satisfaction, Reen Media is your trusted partner for all your photography needs. Whether you’re looking for 
+    <br>elegant wedding photography, eye-catching business imagery, or creative portraits, we are here to bring your vision to life. Let us help you capture the 
+    <br>beauty of your special moments with professionalism, creativity, and passion. <br>
+   </p>
+
+
+
+
+
+
+
+
+    </p>
+
+ <footer>reen media photography</footer>   
+</body>
+</html>
