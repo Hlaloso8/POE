@@ -1,83 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-  
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - Reen Media</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      background-color: #444;
+      flex-wrap: wrap;
+    }
+
+    .navbar a {
+      color: white;
+      padding: 1rem;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .navbar a:hover {
+      background-color: #666;
+    }
+
+    .burger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      margin: 1rem;
+    }
+
+    .burger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+
+    .navbar.active {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media screen and (max-width: 768px) {
+      .navbar {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .burger {
+        display: flex;
+      }
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 2rem;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      margin: 1rem auto;
+      border-radius: 8px;
+    }
+
+    select, input[type="radio"] {
+      margin: 0.5rem 1rem;
+    }
+
+    .content-box {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+
+    .Rean {
+      font-size: 1.3rem;
+      color: #333;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #222;
+      color: #fff;
+      padding: 1rem 0;
+      margin-top: 2rem;
+    }
+
+    button {
+      display: block;
+      margin: 1rem auto;
+      padding: 0.5rem 1.5rem;
+      background-color: #222;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #444;
+    }
+
+    .gallery-images {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .gallery-images img {
+      max-width: 30%;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+  </style>
 </head>
 <body>
-    <header>reen media</header>
-    <body>
-        <div class="navbar">
-         <a href="index.html">Home</a>
-         <a href="enquiry.html">enquiry</a>
-         <a href="contactus.html">contactus</a>
-         <a href="aboutus.html">aboutus</a>
-         <a href="products.html">products</a>
-        </div>
-    <img src="images/wedding photoshoot.jpeg" alt="">
+  <header>reen media</header>
+  <div class="burger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="navbar" id="navbar">
+    <a href="index.html">Home</a>
+    <a href="enquiry.html">Enquiry</a>
+    <a href="contactus.html">Contact Us</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="products.html">Products</a>
+  </div>
 
-    <h1>Our Gallery</h1>
+  <img src="images/wedding photoshoot.jpeg" alt="Wedding Photoshoot">
 
-    <label for="choices">See an Album:</label>
-<select id="choices" name="choices">
-    <option value="option1">Marriage</option>
-    <option value="option2">Funeral</option>
-    <option value="option3">Baby Shower</option>
-    <option value="option 4"><a href="aboutus.html"></a> Birthday</option> 
+  <h1>Our Gallery</h1>
 
-</select>
+  <label for="choices">See an Album:</label>
+  <select id="choices" name="choices" onchange="displayAlbum()">
+    <option value="marriage">Marriage</option>
+    <option value="funeral">Funeral</option>
+    <option value="babyshower">Baby Shower</option>
+    <option value="birthday">Birthday</option>
+  </select>
 
-<p>Select one option:</p>
-<input type="radio" id="option1" name="options" value="option1">
-<label for="option1">Option 1</label>
+  <div class="gallery-images" id="gallery-images">
+    
+  </div>
 
-<input type="radio" id="option2" name="options" value="option2">
-<label for="option2">Option 2</label>
+  <div class="content-box">
+    <b class="Rean">Reen Media</b> is a premier photography service dedicated to capturing life’s most cherished moments with professionalism and creativity.<br>
+    Whether you're celebrating a wedding, hosting a corporate event, or need high-quality portraits, our expert team ensures that every shot tells a compelling story.<br>
+    With a keen eye for detail and a passion for visual storytelling, we bring your vision to life through stunning, high-resolution images that preserve your most meaningful experiences.<br><br>
 
-<input type="radio" id="option3" name="options" value="option3">
-<label for="option3">Option 3</label>
+    Our services cater to a variety of photography needs, including weddings, engagements, family portraits, corporate branding, product photography, and more.<br>
+    We tailor our approach to suit your personal style and requirements, from intimate gatherings to large-scale productions.<br><br>
 
-<br><br>
-<button onclick="redirectToPage()">Go to Selected Page</button>
+    In addition to our photography services, we also offer professional editing and retouching to enhance the final images.<br>
+    Using advanced post-production techniques, we refine colors, lighting, and composition to ensure each photograph is polished to perfection.<br><br>
 
-   <p class="content-box">
+    With a commitment to excellence and customer satisfaction, Reen Media is your trusted partner for all your photography needs.<br>
+    Let us help you capture the beauty of your special moments with professionalism, creativity, and passion.
+  </div>
 
-    <b class="Rean">Reen Media</b> is a premier photography service dedicated to capturing life’s most cherished moments with professionalism and creativity. 
-    <br>Whether you're celebrating a wedding, hosting a corporate event, or need high-quality portraits, our expert team ensures that every 
-    <br>shot tells a compelling story. With a keen eye for detail and a passion for visual storytelling, we bring your vision to life through 
-    <br>stunning, high-resolution images that preserve your most meaningful experiences. <br>
+  <footer>reen media photography</footer>
 
-    <br>Our services cater to a variety of photography needs, including weddings, engagements, family portraits, corporate branding, product 
-    <br>photography, and more. We understand that each event and project is unique, which is why we tailor our approach to suit your personal style
-    <br>and requirements. From intimate gatherings to large-scale productions, we have the expertise and equipment to deliver outstanding results that
-    <br> exceed expectations. <br>
+  <script>
+    function toggleMenu() {
+      const navbar = document.getElementById("navbar");
+      navbar.classList.toggle("active");
+    }
 
-    <br>At Reen Media, we believe that photography is more than just taking pictures—it’s about capturing emotions, personality, and the essence of 
-    <br> moment. Our team works closely with clients to ensure a relaxed and enjoyable experience, allowing us to create authentic and memorable images.
-    <br> Whether it’s a candid smile, a heartfelt embrace, or a perfectly composed product shot, we strive to produce visually stunning photos that stand 
-    <br>the test of time.
+    function displayAlbum() {
+      const album = document.getElementById("choices").value;
+      const gallery = document.getElementById("gallery-images");
 
-    <br>In addition to our photography services, we also offer professional editing and retouching to enhance the final images. Using advanced post-production
-    <br> techniques, we refine colors, lighting, and composition to ensure each photograph is polished to perfection. Our goal is to deliver high-quality visuals
-    <br> that not only meet but exceed your expectations, providing you with timeless keepsakes and impactful branding materials. <br>
+      let images = [];
 
-    <br>With a commitment to excellence and customer satisfaction, Reen Media is your trusted partner for all your photography needs. Whether you’re looking for 
-    <br>elegant wedding photography, eye-catching business imagery, or creative portraits, we are here to bring your vision to life. Let us help you capture the 
-    <br>beauty of your special moments with professionalism, creativity, and passion. <br>
-   </p>
+      if (album === "marriage") {
+        images = [
+          "images/marriage1.jpg",
+          "images/marriage2.jpg",
+          "images/marriage3.jpg"
+        ];
+      } else if (album === "funeral") {
+        images = [
+          "images/funeral1.jpg",
+          "images/funeral2.jpg",
+          "images/funeral3.jpg"
+        ];
+      } else if (album === "babyshower") {
+        images = [
+          "images/babyshower1.jpg",
+          "images/babyshower2.jpg",
+          "images/babyshower3.jpg"
+        ];
+      } else if (album === "birthday") {
+        images = [
+          "images/birthday1.jpg",
+          "images/birthday2.jpg",
+          "images/birthday3.jpg"
+        ];
+      }
 
+      gallery.innerHTML = "";
+      images.forEach(src => {
+        const imgElement = document.createElement("img");
+        imgElement.src = src;
+        imgElement.alt = "Gallery Image";
+        gallery.appendChild(imgElement);
+      });
+    }
 
-
-
-
-
-
-
-    </p>
-
- <footer>reen media photography</footer>   
+    
+    displayAlbum();
+  </script>
 </body>
 </html>
